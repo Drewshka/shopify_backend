@@ -16,5 +16,11 @@
     "warehouseID": "3",
     "itemName": "Macbook",
     "category": "Electronics"
+  },
+  {
+    "itemName": "Hat",
+    "warehouseID": "1",
+    "category": "Apparel",
+    "id": "3srly6o1d0tkyggjl08"
   }
 ]

@@ -28,6 +28,19 @@ exports.listOneInventoryItem = (req, res, next) => {
   }
 };
 
+//*New
+exports.getItemsByWarehouse = (req, res, next) => {
+  const warehouseID = req.params.id;
+  let filteredItem = InventoryItem.getItemsByWarehouse(warehouseID);
+  if (filteredItem === [] || filteredItem === undefined) {
+    const err = new Error("That warehouse doesn't exist");
+    err.status = 404;
+    next(err);
+  } else {
+    res.json(filteredItem);
+  }
+};
+
 exports.deleteInventoryItem = (req, res, next) => {
   const updatedArray = InventoryItem.remove(req.params.id);
   if (!updatedArray) {

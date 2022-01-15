@@ -37,6 +37,15 @@ const getOneById = (id) => {
   return inventoryItem;
 };
 
+//*new
+const getItemsByWarehouse = (warehouseID) => {
+  const itemsArray = getAll();
+  let filteredItem = itemsArray.filter(
+    (item) => item.warehouseID === warehouseID
+  );
+  return filteredItem;
+};
+
 const remove = (id) => {
   const inventoryItemsArray = getAll();
   const inventoryItemIndex = inventoryItemsArray.findIndex(
@@ -66,4 +75,11 @@ const update = (id, data) => {
   }
 };
 
-module.exports = { getAll, add, getOneById, remove, update };
+module.exports = {
+  getAll,
+  add,
+  getOneById,
+  getItemsByWarehouse,
+  remove,
+  update,
+};
