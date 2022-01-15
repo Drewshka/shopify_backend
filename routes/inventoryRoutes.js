@@ -7,7 +7,6 @@ const {
   deleteInventoryItem,
   updateInventoryItem,
 } = require("../controllers/inventoryControllers");
-// } = require("./controllers/inventoryControllers");
 
 router.get("/", listInventoryItems);
 router.post("/", addInventoryItem);

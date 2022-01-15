@@ -5,7 +5,6 @@ exports.listInventoryItems = (req, res) => {
 };
 
 exports.addInventoryItem = (req, res, next) => {
-  //   if (!req.body.name || !req.body.nickname) {
   if (!req.body.itemName || !req.body.category) {
     const err = new Error(
       "POST request requires item name and category attributes."
