@@ -5,9 +5,9 @@ exports.listInventoryItems = (req, res) => {
 };
 
 exports.addInventoryItem = (req, res, next) => {
-  if (!req.body.itemName || !req.body.category) {
+  if (!req.body.itemName || !req.body.category || !req.body.warehouseID) {
     const err = new Error(
-      "POST request requires item name and category attributes."
+      "POST request requires item name, warehouse ID and category attributes."
     );
     err.status = 400;
     next(err);
@@ -41,9 +41,9 @@ exports.deleteInventoryItem = (req, res, next) => {
 
 exports.updateInventoryItem = (req, res, next) => {
   console.log("req.body", req.body);
-  if (!req.body.itemName && !req.body.category) {
+  if (!req.body.itemName && !req.body.category && !req.body.warehouseID) {
     const err = new Error(
-      "PUT request requires item name and/or category attributes"
+      "PUT request requires item name and/or category and/or warehouse ID attributes"
     );
     err.status = 400;
     next(err);
