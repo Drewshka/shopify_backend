@@ -4,9 +4,9 @@ const fs = require("fs"),
   uniqid = require("uniqid");
 
 class InventoryItem {
-  constructor(name, nickname) {
-    this.name = name;
-    this.nickname = nickname;
+  constructor(itemName, category) {
+    this.itemName = itemName;
+    this.category = category;
     this.id = uniqid();
   }
 }
@@ -18,7 +18,7 @@ const getAll = () => {
 
 const add = (obj) => {
   const inventoryItemsArray = getAll();
-  const inventoryItem = new InventoryItem(obj.name, obj.nickname);
+  const inventoryItem = new InventoryItem(obj.itemName, obj.category);
   inventoryItemsArray.push(inventoryItem);
   fs.writeFileSync(inventoryItemsFile, JSON.stringify(inventoryItemsArray));
   return inventoryItemsArray;

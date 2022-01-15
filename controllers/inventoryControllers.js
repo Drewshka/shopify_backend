@@ -1,14 +1,14 @@
 const InventoryItem = require("../models/inventoryModel");
-// const InventoryItem = require("./models/inventoryModel");
 
 exports.listInventoryItems = (req, res) => {
   res.json(InventoryItem.getAll());
 };
 
 exports.addInventoryItem = (req, res, next) => {
-  if (!req.body.name || !req.body.nickname) {
+  //   if (!req.body.name || !req.body.nickname) {
+  if (!req.body.itemName || !req.body.category) {
     const err = new Error(
-      "POST request requires name and nickname attributes."
+      "POST request requires item name and category attributes."
     );
     err.status = 400;
     next(err);
@@ -42,9 +42,9 @@ exports.deleteInventoryItem = (req, res, next) => {
 
 exports.updateInventoryItem = (req, res, next) => {
   console.log("req.body", req.body);
-  if (!req.body.name && !req.body.nickname) {
+  if (!req.body.itemName && !req.body.category) {
     const err = new Error(
-      "PUT request requires name and/or nickname attributes"
+      "PUT request requires item name and/or category attributes"
     );
     err.status = 400;
     next(err);
