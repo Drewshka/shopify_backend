@@ -5,9 +5,9 @@ exports.listInventoryItems = (req, res) => {
 };
 
 exports.addInventoryItem = (req, res, next) => {
-  if (!req.body.itemName || !req.body.category) {
+  if (!req.body.itemName || !req.body.category || !req.body.warehouseID) {
     const err = new Error(
-      "POST request requires item name and category attributes."
+      "POST request requires item name, warehouse ID and category attributes."
     );
     err.status = 400;
     next(err);
@@ -28,6 +28,19 @@ exports.listOneInventoryItem = (req, res, next) => {
   }
 };
 
+//*New
+exports.getItemsByWarehouse = (req, res, next) => {
+  const warehouseID = req.params.id;
+  let filteredItem = InventoryItem.getItemsByWarehouse(warehouseID);
+  if (filteredItem === [] || filteredItem === undefined) {
+    const err = new Error("That warehouse doesn't exist");
+    err.status = 404;
+    next(err);
+  } else {
+    res.json(filteredItem);
+  }
+};
+
 exports.deleteInventoryItem = (req, res, next) => {
   const updatedArray = InventoryItem.remove(req.params.id);
   if (!updatedArray) {
@@ -41,9 +54,9 @@ exports.deleteInventoryItem = (req, res, next) => {
 
 exports.updateInventoryItem = (req, res, next) => {
   console.log("req.body", req.body);
-  if (!req.body.itemName && !req.body.category) {
+  if (!req.body.itemName && !req.body.category && !req.body.warehouseID) {
     const err = new Error(
-      "PUT request requires item name and/or category attributes"
+      "PUT request requires item name and/or category and/or warehouse ID attributes"
     );
     err.status = 400;
     next(err);

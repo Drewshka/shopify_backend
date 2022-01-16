@@ -1,9 +1,26 @@
 [
-  { "id": "sktwi8lkvwo2y16", "itemName": "Pants", "category": "Apparel" },
-  { "id": "sktwi8ukvwoj85b", "itemName": "Guitar", "category": "Instruments" },
+  {
+    "id": "sktwi8lkvwo2y16",
+    "warehouseID": "1",
+    "itemName": "Pants",
+    "category": "Apparel"
+  },
+  {
+    "id": "sktwi8ukvwoj85b",
+    "warehouseID": "2",
+    "itemName": "Guitar",
+    "category": "Instruments"
+  },
   {
     "id": "3srly6o18rmkyg37lh3",
+    "warehouseID": "3",
     "itemName": "Macbook",
     "category": "Electronics"
+  },
+  {
+    "itemName": "Hat",
+    "warehouseID": "1",
+    "category": "Apparel",
+    "id": "3srly6o1d0tkyggjl08"
   }
 ]

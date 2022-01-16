@@ -1,0 +1,23 @@
+[
+  {
+    "id": "1",
+    "name": "Manhattan",
+    "address": "503 Broadway",
+    "city": "New York",
+    "country": "USA"
+  },
+  {
+    "id": "2",
+    "name": "King West",
+    "address": "467 King Street West",
+    "city": "Toronto",
+    "country": "CAN"
+  },
+  {
+    "id": "3",
+    "name": "Granville",
+    "address": "455 Granville Street",
+    "city": "Vancouver",
+    "country": "CAN"
+  }
+]
