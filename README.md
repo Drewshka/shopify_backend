@@ -7,7 +7,7 @@ Clone this repo to your local machine using git@github.com:Drewshka/shopify_back
 ## Installation
 
 ```sh
-cd shopify-backend-challenge && npm i
+cd into project folder && npm i
 ```
 
 ## Run Server
