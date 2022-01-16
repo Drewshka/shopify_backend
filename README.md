@@ -1,3 +1,9 @@
+## Clone
+
+```sh
+Clone this repo to your local machine using git@github.com:Drewshka/shopify_backend.git
+```
+
 ## Installation
 
 ```sh
