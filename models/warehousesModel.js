@@ -6,7 +6,6 @@ const fs = require("fs"),
 
 class Warehouse {
   constructor(name, address, city, country) {
-    // this.id = uuidv4();
     this.id = uniqid();
     this.name = name;
     this.address = address;
@@ -21,7 +20,6 @@ let inventoryItemsData = [];
 //*Warehouses/users
 const getAllWarehouses = () => {
   const data = fs.readFileSync(warehousesFile);
-  //   return JSON.parse(data);
   warehousesData = JSON.parse(data);
   return warehousesData;
 };
@@ -29,7 +27,6 @@ const getAllWarehouses = () => {
 //*Inventory Items/gigs
 const getAllItems = () => {
   const data = fs.readFileSync(inventoryItemsFile);
-  // return JSON.parse(data);
   inventoryItemsData = JSON.parse(data);
   return inventoryItemsData;
 };
@@ -47,16 +44,6 @@ const getOneById = (id) => {
   const warehouse = warehousesArray.find((warehouse) => warehouse.id === id);
   return warehouse;
 };
-
-// const remove = (id) => {
-//   const usersArray = getAllWarehouses();
-//   const userIndex = usersArray.findIndex((user) => user.id === id);
-//   if (userIndex !== -1) {
-//     usersArray.splice(userIndex, 1);
-//     fs.writeFileSync(warehousesFile, JSON.stringify(usersArray));
-//     return usersArray;
-//   }
-// };
 
 const remove = (warehouseID) => {
   getAllItems();
